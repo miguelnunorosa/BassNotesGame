@@ -14,7 +14,7 @@ public class App {
         graphics.header();
 
         do {
-            checkBassManyStrings();
+            askHowManyStrings();
             computerGetNote(manyStrings);
         }while(true);
 
@@ -23,7 +23,7 @@ public class App {
 
 
 
-    private static void checkBassManyStrings(){
+    private static void askHowManyStrings(){
         Scanner playerAnswer = new Scanner(System.in);
 
         do{
@@ -44,8 +44,12 @@ public class App {
     private static void computerGetNote(int manyStrings){
         graphics.bass(manyStrings);
 
-        if(manyStrings == 4) noteFromBassFourStrings();
-        if(manyStrings == 5) noteFromBassFiveStrings();
+        if(manyStrings == 4){
+            noteFromBassFourStrings();
+        }else{
+            noteFromBassFiveStrings();
+        }
+
     }
 
 
