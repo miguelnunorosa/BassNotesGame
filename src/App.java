@@ -13,14 +13,10 @@ public class App {
 
         graphics.header();
 
-        checkBassManyStrings();
-        
-
-        //System.out.println("NOTE: " + notes.pickNoteName(numRandom.nextInt(notes.getNotesLenght())) );
-        //System.out.println("STRING: " +  notes.pickStringName(numRandom.nextInt(notes.getNotesLenght())) );
-
-
-
+        do {
+            checkBassManyStrings();
+            computerGetNote(manyStrings);
+        }while(true);
 
     }
 
@@ -42,37 +38,34 @@ public class App {
 
 
 
+    /***
+     * Computes get/pick (random) a note (string and fret)
+     */
+    private static void computerGetNote(int manyStrings){
+        graphics.bass(manyStrings);
+
+        if(manyStrings == 4) noteFromBassFourStrings();
+        if(manyStrings == 5) noteFromBassFiveStrings();
+    }
+
+
+    private static void noteFromBassFourStrings(){
+        int positionString = numRandom.nextInt(1, notes.getStringsLenght());
+        int positionFret   = numRandom.nextInt(11);
 
 
 
+        System.out.println("string " + positionString + "STRING: " + notes.pickStringName(positionString));  //TODO remove this line after finish project
+        System.out.println("Posicao Final: Traste (" + positionFret + ") | Corda (" + positionString + ")"); //TODO remove this line after finish project
+    }
 
 
 
-
-
-   /* private static void guessTheNote(int strings){
-        int bassStrings, stringPosition;
-        String noteName, StringName;
-
-
-        System.out.println("NOTE: " + notes.pickNoteName(numRandom.nextInt(notes.getNotesLenght())) );
-
-        //check the number of bass strings
-        if(strings == 4){
-            bassStrings = 4;
-            stringPosition = numRandom.nextInt( notes.getStringsLenght() );
-            if (stringPosition == 0) stringPosition++;
-
-
-
-            System.out.println("STRING: " +  notes.pickStringName(stringPosition) );
-        }else{
-            bassStrings = 5;
-            System.out.println("STRING: " +  notes.pickStringName(numRandom.nextInt(notes.getNotesLenght())) );
-        }
-
-
-    }*/
+    private static void noteFromBassFiveStrings(){
+        int positionString = numRandom.nextInt(4);
+        if (positionString == 0) positionString++;
+        //TODO
+    }
 
 
 }

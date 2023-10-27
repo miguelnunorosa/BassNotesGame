@@ -5,11 +5,9 @@
 
 public class Notes {
 
-    int[] numberOfStrings = {4, 5};
-    String[] noteNames = {"Dó", "Ré", "Mi", "Fá", "Sol", "Lá", "Si"};
-    String[] stringNames = {"Si", "Mi", "Lá", "Ré", "Sol"};
-    String noteName;
-    int numberOfFrets = 12;
+    private int[] numberOfStrings = {4, 5};
+    private String[] noteNames = {"Dó", "Ré", "Mi", "Fá", "Sol", "Lá", "Si"};
+    private String[] stringNames = {"Si", "Mi", "Lá", "Ré", "Sol"};
     
 
 
