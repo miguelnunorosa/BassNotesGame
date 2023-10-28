@@ -1,14 +1,13 @@
 
 public class App {
 
-    private static Game game = new Game();
-
-
-
     public static void main(String[] args) throws Exception {
+
+        Game game = new Game();
+
+
         game.mainGame();
     }
-
 
 
 }
