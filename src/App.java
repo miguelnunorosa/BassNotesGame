@@ -24,7 +24,7 @@ public class App {
 
 
 
-
+        //TODO refactor game workflow
         do {
             askHowManyStrings();
             computerGetNote(manyStrings);
