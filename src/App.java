@@ -65,7 +65,7 @@ public class App {
     }
 
 
-    private static int noteFromFourStringsBass(){
+    private static int getFretFromFourStringsBass(){
         int getFretPosition  = numRandom.nextInt(11);
 
         return getFretPosition;
@@ -81,18 +81,25 @@ public class App {
 
     private static void noteFromBassFourStrings(){
         Scanner playerAnswer = new Scanner(System.in);
-        String guessAnswer;
+        String guessAnswer, pickedBassString, pickedBassFret;
 
 
-        System.out.println("Posicao Final: Traste (" + noteFromFourStringsBass() + ") | Corda (" + getStringFromFourStringBass() + ")\n"); //TODO remove this line after finish project
+        System.out.println("Posicao Final: Traste (" + getFretFromFourStringsBass() + ") | Corda (" + getStringFromFourStringBass() + ")\n"); //TODO remove this line after finish project
         System.out.print("Qual é a nota: ");
         guessAnswer = playerAnswer.nextLine();
 
 
+        //ler/guardar qual a corda seleccionada no metodo getStringFromFourStringBass()
 
 
 
+        //ler/guardar qual o fret seleccionado no metodo getFretFromFourStringsBass()
 
+
+
+        //comparar a nota que o utilizador digitou com a nota da posição do frete
+
+            //se for igual, informa que acertou. Caso contrario, gera nova nota para adivinhar
 
 
 
