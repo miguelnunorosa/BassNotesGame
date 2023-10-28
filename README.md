@@ -12,4 +12,5 @@ Este espaço contem as seguintes diretorias:
 
 Para executar o jogo, abra o terminal e digite
 > cd /bin
+
 > java App
