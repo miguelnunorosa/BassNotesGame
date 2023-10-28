@@ -6,7 +6,7 @@ public class Game {
     private static Graphics graphics = new Graphics();
     private static Notes notes = new Notes();
     private static Random numRandom = new Random();
-    private static int manyStrings, getFretPosition, getStringFromFourBassString, getStringFromFiveBassString;
+    private static int manyStrings, getFretPosition, getStringFromFourBassString, getStringFromFiveBassString, counterCorrect;
 
 
 
@@ -48,6 +48,7 @@ public class Game {
         if(manyStrings == 4){ //TODO check workflow
             do {
                 selectedFourStringsBass();
+                System.out.println("Corretas: " + counterCorrect);
             }while(true);
         }else{
             selectedFiveStringsBass();
@@ -63,22 +64,77 @@ public class Game {
         String guessAnswer;
 
 
-        System.out.println("\nQual a nota: Traste (" + getFretFromBassFretboard() + ") | Corda (" + getStringFromFourStringBass() + ")");
+
+        pickedBassString = getStringFromFourStringBass(); //CPU select random string
+        pickedBassFret   = getFretFromBassFretboard();    //CPU select random fret
+        int parada = 0;
+
+
+        System.out.println("\nQual a nota: Traste (" + pickedBassFret + ") | Corda (" + pickedBassString + ")");
         System.out.print("Resposta: ");
         guessAnswer = playerAnswer.nextLine();
 
 
+        //TODO algoritmo
         //ler/guardar qual o nº da corda seleccionada no metodo getStringFromFourStringBass()
-        pickedBassString = getStringFromFourStringBass();
-
         //ler/guardar qual o nº do fret seleccionado no metodo getFretFromFourStringsBass()
-        pickedBassFret = getFretFromBassFretboard();
-
-
-
         //comparar a nota que o utilizador digitou com a nota da posição do frete
+             //se for igual, informa que acertou. Caso contrario, gera nova nota para adivinhar
 
-        //se for igual, informa que acertou. Caso contrario, gera nova nota para adivinhar
+
+
+        /*if( pickedBassString == 1 ){
+            if( guessAnswer.equals( notes.getStringE(pickedBassFret) ) ) {
+                System.out.println("ACERTOU");
+                counterCorrect++;
+            }else{
+                System.out.println("ERROU!!");
+            }
+        }*/
+
+
+
+        switch(pickedBassString){
+            case 1: //corda E Mi
+                //System.out.println("demo selected string (1) 1 - A Lá");
+                if( guessAnswer.equals( notes.getStringE(pickedBassFret) ) ) {
+                    System.out.println("ACERTOU");
+                    counterCorrect++;
+                }else{
+                    System.out.println("Nota incorreta! \nA nota correta seria: " + notes.getStringE(pickedBassFret));
+                }
+                break;
+            case 2: //corda A La
+                //System.out.println("demo selected string (2) 2 - A Lá");
+                if( guessAnswer.equals( notes.getStringA(pickedBassFret) ) ) {
+                    System.out.println("ACERTOU");
+                    counterCorrect++;
+                }else{
+                    System.out.println("Nota incorreta! \nA nota correta seria: " + notes.getStringA(pickedBassFret));
+                }
+                break;
+            case 3: //corda D Re
+                //System.out.println("demo selected string (3) 3 - A Ré");
+                if( guessAnswer.equals( notes.getStringD(pickedBassFret) ) ) {
+                    System.out.println("ACERTOU");
+                    counterCorrect++;
+                }else{
+                    System.out.println("Nota incorreta! \nA nota correta seria: " + notes.getStringD(pickedBassFret));
+                }
+                break;
+            case 4: //corda G Sol
+                //System.out.println("demo selected string (4) 4 - A Sol");
+                if( guessAnswer.equals( notes.getStringG(pickedBassFret) ) ) {
+                    System.out.println("ACERTOU");
+                    counterCorrect++;
+                }else{
+                    System.out.println("Nota incorreta! \nA nota correta seria: " + notes.getStringG(pickedBassFret));
+                }
+                break;
+        }
+
+
+
 
 
 
