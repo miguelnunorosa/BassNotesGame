@@ -5,8 +5,9 @@
 
 public class Notes {
 
-    private int[] numberOfStrings = {4, 5};
-    private String[] noteNames = {"Dó", "Ré", "Mi", "Fá", "Sol", "Lá", "Si"};
+    private String[] noteNames    = {"Dó", "Ré", "Mi", "Fá", "Sol", "Lá", "Si"};
+    private String[] noteAccidentUp = {"Dó#", "Ré#", "Fá#", "Sol#", "Lá#"};
+    private String[] noteAccidentDown = {"Dób", "Réb", "Fáb", "Solb", "Láb"};
     private String[] stringNames = {"Si", "Mi", "Lá", "Ré", "Sol"};
     
 
@@ -20,9 +21,21 @@ public class Notes {
     public int getNotesLenght(){ return noteNames.length; }
     public int getStringsLenght(){ return stringNames.length; }
 
-    public int getNumberOfStrings(int numberStrings){ return numberStrings; }
+    public String[] getNoteNames() { return noteNames; }
 
-    public String pickNoteName(int notePosition){ return noteNames[notePosition]; }
-    public String pickStringName(int stringPosition){ return stringNames[stringPosition]; }
+    public void setNoteNames(String[] noteNames) { this.noteNames = noteNames; }
+
+    public String[] getNoteAccidentUp() { return noteAccidentUp; }
+
+    public void setNoteAccidentUp(String[] noteAccidentUp) { this.noteAccidentUp = noteAccidentUp; }
+
+    public String[] getNoteAccidentDown() { return noteAccidentDown; }
+
+    public void setNoteAccidentDown(String[] noteAccidentDown) { this.noteAccidentDown = noteAccidentDown; }
+
+    public String[] getStringNames() { return stringNames; }
+
+    public void setStringNames(String[] stringNames) { this.stringNames = stringNames; }
+
 
 }
