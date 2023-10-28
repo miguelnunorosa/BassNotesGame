@@ -9,6 +9,10 @@ public class App {
     private static int manyStrings;
 
 
+
+
+
+
     public static void main(String[] args) throws Exception {
         Scanner playerAnswer = new Scanner(System.in);
         int optionFromMenu;
@@ -61,15 +65,45 @@ public class App {
     }
 
 
+    private static int noteFromFourStringsBass(){
+        int getFretPosition  = numRandom.nextInt(11);
+
+        return getFretPosition;
+    }
+
+    private static int getStringFromFourStringBass(){
+        int getBassString    = numRandom.nextInt(1, notes.getStringsLenght());
+
+        return getBassString;
+    }
+
+
+
     private static void noteFromBassFourStrings(){
-        int positionString = numRandom.nextInt(1, notes.getStringsLenght());
-        int positionFret   = numRandom.nextInt(11);
+        Scanner playerAnswer = new Scanner(System.in);
+        String guessAnswer;
+
+
+        System.out.println("Posicao Final: Traste (" + noteFromFourStringsBass() + ") | Corda (" + getStringFromFourStringBass() + ")\n"); //TODO remove this line after finish project
+        System.out.print("Qual é a nota: ");
+        guessAnswer = playerAnswer.nextLine();
+
+
+
+
+
+
+
+
+
 
 
 
         //System.out.println("string " + positionString + "STRING: " + notes.pickStringName(positionString));  //TODO remove this line after finish project
-        System.out.println("Posicao Final: Traste (" + positionFret + ") | Corda (" + positionString + ")"); //TODO remove this line after finish project
     }
+
+
+
 
 
 
@@ -78,6 +112,5 @@ public class App {
         if (positionString == 0) positionString++;
         //TODO
     }
-
 
 }

@@ -56,6 +56,7 @@ public class Graphics {
     public void notes(){
         System.out.println("# ================================= #");
         System.out.println("#           Bass Notes              #");
+        System.out.println("#                                   #");
         System.out.println("#   Notas            Acidentes      #");
         System.out.println("#  A => Lá          Lá#  /  Láb     #");
         System.out.println("#  B => Si                          #");
