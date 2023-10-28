@@ -11,6 +11,4 @@ Este espaço contem as seguintes diretorias:
 - `doc`: diretoria onde está a documentação em JavaDoc
 
 Para executar o jogo, abra o terminal e digite
-> cd /bin
-
-> java App
+> cd /bin && java App
