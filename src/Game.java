@@ -6,24 +6,21 @@ public class Game {
     private static Graphics graphics = new Graphics();
     private static Notes notes = new Notes();
     private static Random numRandom = new Random();
-    private static int manyStrings, getFretPosition, getBassString;
+    private static int manyStrings, getFretPosition, getStringFromFourBassString, getStringFromFiveBassString;
 
 
 
     public void mainGame(){
-
         Scanner playerAnswer = new Scanner(System.in);
         int optionFromMenu;
 
         graphics.mainMenu();
         optionFromMenu = playerAnswer.nextInt();
 
-        //TODO refactor game workflow
-        do {
-            askHowManyStrings();
-            mainGame(manyStrings);
-        }while(true);
 
+        //TODO refactor game workflow
+        askHowManyStrings();
+        gameWithSelectBass(manyStrings);
 
     }
 
@@ -45,29 +42,28 @@ public class Game {
 
 
 
-    /***
-     * Computes get/pick (random) a note (string and fret)
-     */
-    private static void mainGame(int manyStrings){
+    private static void gameWithSelectBass(int manyStrings){
         graphics.bass(manyStrings);
 
-        if(manyStrings == 4){
-            fourStringGuessNote();
+        if(manyStrings == 4){ //TODO check workflow
+            do {
+                selectedFourStringsBass();
+            }while(true);
         }else{
-            fiveStringGuessNote();
+            selectedFiveStringsBass();
         }
 
     }
 
 
 
-    private static void fourStringGuessNote(){
+    private static void selectedFourStringsBass(){
         Scanner playerAnswer = new Scanner(System.in);
         int pickedBassString, pickedBassFret;
         String guessAnswer;
 
 
-        System.out.println("Qual a nota: Traste (" + getFretFromFourStringsBass() + ") | Corda (" + getStringFromFourStringBass() + ")\n");
+        System.out.println("\nQual a nota: Traste (" + getFretFromBassFretboard() + ") | Corda (" + getStringFromFourStringBass() + ")");
         System.out.print("Resposta: ");
         guessAnswer = playerAnswer.nextLine();
 
@@ -76,7 +72,7 @@ public class Game {
         pickedBassString = getStringFromFourStringBass();
 
         //ler/guardar qual o nº do fret seleccionado no metodo getFretFromFourStringsBass()
-        pickedBassFret = getFretFromFourStringsBass();
+        pickedBassFret = getFretFromBassFretboard();
 
 
 
@@ -99,12 +95,22 @@ public class Game {
         //System.out.println("string " + positionString + "STRING: " + notes.pickStringName(positionString));  //TODO remove this line after finish project
     }
 
-    private static int getFretFromFourStringsBass(){
+    private static int getFretFromBassFretboard(){
         return getFretPosition = numRandom.nextInt(11);
     }
 
+
     private static int getStringFromFourStringBass(){
-        return getBassString = numRandom.nextInt(1, notes.getStringsLenght());
+        return getStringFromFourBassString = numRandom.nextInt(1, notes.getStringsLenght());
+    }
+
+
+    private static int getStringFromFiveStringBass(){
+        int positionString = numRandom.nextInt(4);
+
+        if (positionString == 0) positionString++;
+
+        return getStringFromFiveBassString = positionString;
     }
 
 
@@ -124,9 +130,7 @@ public class Game {
 
 
 
-    private static void fiveStringGuessNote(){
-        int positionString = numRandom.nextInt(4);
-        if (positionString == 0) positionString++;
+    private static void selectedFiveStringsBass(){
         //TODO
     }
 
