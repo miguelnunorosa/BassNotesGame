@@ -1,18 +1,15 @@
-## Getting Started
+## Bass Notes Memory
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+Bem vindo ao repositório do jogo de memória "Bass Notes Memory".
+
 
 ## Folder Structure
+Este espaço contem as seguintes diretorias:
 
-The workspace contains two folders by default, where:
+- `src`: diretoria onde está p código fonte
+- `bin`: diretoria com o executável do jogo
+- `doc`: diretoria onde está a documentação em JavaDoc
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
-
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
-
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
-
-## Dependency Management
-
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+Para executar o jogo, abra o terminal e digite
+> cd /bin
+> java App
