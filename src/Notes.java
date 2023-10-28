@@ -12,13 +12,15 @@ public class Notes {
 
                                    //  C    D     E      F     G     A     B
     private String[] noteNames    = {"Dó", "Ré", "Mi", "Fá", "Sol", "Lá", "Si"};
+
+                                  //  0    1     2     3      4
     private String[] stringNames = {"Si", "Mi", "Lá", "Ré", "Sol"};
 
-    private String[] stringGNotes = {"Sol", "Sol#", "Lá", "Lá#", "si", "Dó", "Dó#", "Ré", "Ré#", "Mi", "Fá", "Fá#", "Sol"}; //Corda Sol (G)
-    private String[] stringDNotes = {"Ré", "Ré#", "Mi", "Fá", "Fá#", "Sol", "Sol#", "Lá", "Lá#", "si", "Dó", "Dó#", "Ré"}; //Corda Ré (D)
-    private String[] stringANotes = {"Lá", "Lá#", "si", "Dó", "Dó#", "Ré", "Ré#", "Mi", "Fá", "Fá#", "Sol", "Sol#", "Lá"}; //Corda Lá (A)
-    private String[] stringENotes = {"Mi", "Fá", "Fá#", "Sol", "Sol#", "Lá", "Lá#", "si", "Dó", "Dó#", "Ré", "Ré#", "Mi"}; //Corda Mi (E)
-    private String[] stringBNotes = {"si", "Dó", "Dó#", "Ré", "Ré#", "Mi", "Fá", "Fá#", "Sol", "Sol#", "Lá", "Lá#", "si"}; //Corda Si (B)
+    private String[] stringGNotes = {"Sol", "Sol#", "Lá", "Lá#", "Si", "Dó", "Dó#", "Ré", "Ré#", "Mi", "Fá", "Fá#", "Sol"}; //Corda Sol (G)   4
+    private String[] stringDNotes = {"Ré", "Ré#", "Mi", "Fá", "Fá#", "Sol", "Sol#", "Lá", "Lá#", "Si", "Dó", "Dó#", "Ré"}; //Corda Ré (D)     3
+    private String[] stringANotes = {"Lá", "Lá#", "Si", "Dó", "Dó#", "Ré", "Ré#", "Mi", "Fá", "Fá#", "Sol", "Sol#", "Lá"}; //Corda Lá (A)     2
+    private String[] stringENotes = {"Mi", "Fá", "Fá#", "Sol", "Sol#", "Lá", "Lá#", "Si", "Dó", "Dó#", "Ré", "Ré#", "Mi"}; //Corda Mi (E)     1
+    private String[] stringBNotes = {"si", "Dó", "Dó#", "Ré", "Ré#", "Mi", "Fá", "Fá#", "Sol", "Sol#", "Lá", "Lá#", "Si"}; //Corda Si (B)     0
 
 
     
@@ -87,35 +89,35 @@ public class Notes {
      * Method to get the string G notes position and name
      * @return note position/name
      */
-    public String[] getStringG() { return stringGNotes; }
+    public String getStringG(int stringPosition) { return stringGNotes[stringPosition]; }
 
 
     /**
      * Method to get the string D notes position and name
      * @return note position/name
      */
-    public String[] getStringD() { return stringDNotes; }
+    public String getStringD(int stringPosition) { return stringDNotes[stringPosition]; }
 
 
     /**
      * Method to get the string A notes position and name
      * @return note position/name
      */
-    public String[] getStringA() { return stringANotes; }
+    public String getStringA(int stringPosition) { return stringANotes[stringPosition]; }
 
 
     /**
      * Method to get the string E notes position and name
      * @return note position/name
      */
-    public String[] getStringE() { return stringENotes; }
+    public String getStringE(int stringPosition) { return stringENotes[stringPosition]; }
 
 
     /**
      * Method to get the string B notes position and name
      * @return note position/name
      */
-    public String[] getStringB() { return stringBNotes; }
+    public String getStringB(int stringPosition) { return stringBNotes[stringPosition]; }
 
 
     /**
