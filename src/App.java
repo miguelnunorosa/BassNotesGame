@@ -10,8 +10,16 @@ public class App {
 
 
     public static void main(String[] args) throws Exception {
+        Scanner playerAnswer = new Scanner(System.in);
+        int optionFromMenu;
 
-        graphics.header();
+        graphics.mainMenu();
+        optionFromMenu = playerAnswer.nextInt();
+
+
+
+
+
 
         do {
             askHowManyStrings();
@@ -59,7 +67,7 @@ public class App {
 
 
 
-        System.out.println("string " + positionString + "STRING: " + notes.pickStringName(positionString));  //TODO remove this line after finish project
+        //System.out.println("string " + positionString + "STRING: " + notes.pickStringName(positionString));  //TODO remove this line after finish project
         System.out.println("Posicao Final: Traste (" + positionFret + ") | Corda (" + positionString + ")"); //TODO remove this line after finish project
     }
 
