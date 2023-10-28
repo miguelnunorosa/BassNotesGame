@@ -14,11 +14,11 @@ public class Notes {
     private String[] noteNames    = {"Dó", "Ré", "Mi", "Fá", "Sol", "Lá", "Si"};
     private String[] stringNames = {"Si", "Mi", "Lá", "Ré", "Sol"};
 
-    private String[] stringG = {"Sol", "Sol#", "Lá", "Lá#", "si", "Dó", "Dó#", "Ré", "Ré#", "Mi", "Fá", "Fá#", "Sol"}; //Corda Sol (G)
-    private String[] stringD = {"Ré", "Ré#", "Mi", "Fá", "Fá#", "Sol", "Sol#", "Lá", "Lá#", "si", "Dó", "Dó#", "Ré"}; //Corda Ré (D)
-    private String[] stringA = {"Lá", "Lá#", "si", "Dó", "Dó#", "Ré", "Ré#", "Mi", "Fá", "Fá#", "Sol", "Sol#", "Lá"}; //Corda Lá (A)
-    private String[] stringE = {"Mi", "Fá", "Fá#", "Sol", "Sol#", "Lá", "Lá#", "si", "Dó", "Dó#", "Ré", "Ré#", "Mi"}; //Corda Mi (E)
-    private String[] stringB = {"si", "Dó", "Dó#", "Ré", "Ré#", "Mi", "Fá", "Fá#", "Sol", "Sol#", "Lá", "Lá#", "si"}; //Corda Si (B)
+    private String[] stringGNotes = {"Sol", "Sol#", "Lá", "Lá#", "si", "Dó", "Dó#", "Ré", "Ré#", "Mi", "Fá", "Fá#", "Sol"}; //Corda Sol (G)
+    private String[] stringDNotes = {"Ré", "Ré#", "Mi", "Fá", "Fá#", "Sol", "Sol#", "Lá", "Lá#", "si", "Dó", "Dó#", "Ré"}; //Corda Ré (D)
+    private String[] stringANotes = {"Lá", "Lá#", "si", "Dó", "Dó#", "Ré", "Ré#", "Mi", "Fá", "Fá#", "Sol", "Sol#", "Lá"}; //Corda Lá (A)
+    private String[] stringENotes = {"Mi", "Fá", "Fá#", "Sol", "Sol#", "Lá", "Lá#", "si", "Dó", "Dó#", "Ré", "Ré#", "Mi"}; //Corda Mi (E)
+    private String[] stringBNotes = {"si", "Dó", "Dó#", "Ré", "Ré#", "Mi", "Fá", "Fá#", "Sol", "Sol#", "Lá", "Lá#", "si"}; //Corda Si (B)
 
 
     
@@ -45,35 +45,35 @@ public class Notes {
      * Method to get how many frets/notes B string have
      * @return total string B frets/notes
      */
-    public int getBStringLenght(){ return stringB.length; }
+    public int getBStringLenght(){ return stringBNotes.length; }
 
 
     /**
      * Method to get how many frets/notes E string have
      * @return total string E frets/notes
      */
-    public int getEStringLenght(){ return stringE.length; }
+    public int getEStringLenght(){ return stringENotes.length; }
 
 
     /**
      * Method to get how many frets/notes A string have
      * @return total string A frets/notes
      */
-    public int getAStringLenght(){ return stringA.length; }
+    public int getAStringLenght(){ return stringANotes.length; }
 
 
     /**
      * Method to get how many frets/notes D string have
      * @return total string D frets/notes
      */
-    public int getDStringLenght(){ return stringD.length; }
+    public int getDStringLenght(){ return stringDNotes.length; }
 
 
     /**
      * Method to get how many frets/notes G string have
      * @return total string D frets/notes
      */
-    public int getGStringLenght(){ return stringG.length; }
+    public int getGStringLenght(){ return stringGNotes.length; }
 
 
     /**
@@ -87,35 +87,35 @@ public class Notes {
      * Method to get the string G notes position and name
      * @return note position/name
      */
-    public String[] getStringG() { return stringG; }
+    public String[] getStringG() { return stringGNotes; }
 
 
     /**
      * Method to get the string D notes position and name
      * @return note position/name
      */
-    public String[] getStringD() { return stringD; }
+    public String[] getStringD() { return stringDNotes; }
 
 
     /**
      * Method to get the string A notes position and name
      * @return note position/name
      */
-    public String[] getStringA() { return stringA; }
+    public String[] getStringA() { return stringANotes; }
 
 
     /**
      * Method to get the string E notes position and name
      * @return note position/name
      */
-    public String[] getStringE() { return stringE; }
+    public String[] getStringE() { return stringENotes; }
 
 
     /**
      * Method to get the string B notes position and name
      * @return note position/name
      */
-    public String[] getStringB() { return stringB; }
+    public String[] getStringB() { return stringBNotes; }
 
 
     /**

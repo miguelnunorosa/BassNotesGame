@@ -6,7 +6,7 @@ public class App {
     private static Graphics graphics = new Graphics();
     private static Notes notes = new Notes();
     private static Random numRandom = new Random();
-    private static int manyStrings;
+    private static int manyStrings, getFretPosition, getBassString;
 
 
     public static void main(String[] args) throws Exception {
@@ -20,10 +20,10 @@ public class App {
 
 
 
-
+        //TODO refactor game workflow
         do {
             askHowManyStrings();
-            computerGetNote(manyStrings);
+            mainGame(manyStrings);
         }while(true);
 
     }
@@ -49,35 +49,86 @@ public class App {
     /***
      * Computes get/pick (random) a note (string and fret)
      */
-    private static void computerGetNote(int manyStrings){
+    private static void mainGame(int manyStrings){
         graphics.bass(manyStrings);
 
         if(manyStrings == 4){
-            noteFromBassFourStrings();
+            fourStringGuessNote();
         }else{
-            noteFromBassFiveStrings();
+            fiveStringGuessNote();
         }
 
     }
 
 
-    private static void noteFromBassFourStrings(){
-        int positionString = numRandom.nextInt(1, notes.getStringsLenght());
-        int positionFret   = numRandom.nextInt(11);
+
+    private static void fourStringGuessNote(){
+        Scanner playerAnswer = new Scanner(System.in);
+        int pickedBassString, pickedBassFret;
+        String guessAnswer;
+
+
+        System.out.println("Qual a nota: Traste (" + getFretFromFourStringsBass() + ") | Corda (" + getStringFromFourStringBass() + ")\n");
+        System.out.print("Resposta: ");
+        guessAnswer = playerAnswer.nextLine();
+
+
+        //ler/guardar qual o nº da corda seleccionada no metodo getStringFromFourStringBass()
+        pickedBassString = getStringFromFourStringBass();
+
+        //ler/guardar qual o nº do fret seleccionado no metodo getFretFromFourStringsBass()
+        pickedBassFret = getFretFromFourStringsBass();
+
+
+
+        //comparar a nota que o utilizador digitou com a nota da posição do frete
+
+            //se for igual, informa que acertou. Caso contrario, gera nova nota para adivinhar
+
+
+
+
+
+
+
+
+
+
 
 
 
         //System.out.println("string " + positionString + "STRING: " + notes.pickStringName(positionString));  //TODO remove this line after finish project
-        System.out.println("Posicao Final: Traste (" + positionFret + ") | Corda (" + positionString + ")"); //TODO remove this line after finish project
+    }
+
+    private static int getFretFromFourStringsBass(){
+        return getFretPosition = numRandom.nextInt(11);
+    }
+
+    private static int getStringFromFourStringBass(){
+         return getBassString = numRandom.nextInt(1, notes.getStringsLenght());
     }
 
 
 
-    private static void noteFromBassFiveStrings(){
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    private static void fiveStringGuessNote(){
         int positionString = numRandom.nextInt(4);
         if (positionString == 0) positionString++;
         //TODO
     }
-
 
 }
