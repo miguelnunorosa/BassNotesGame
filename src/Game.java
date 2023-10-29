@@ -11,6 +11,10 @@ public class Game {
 
 
 
+    /**
+     * Main game method. Here the options that make up the game are shown and wait for the user to select an option.
+     * Depending on the option selected, the game indicates the path to follow.
+     * */
     public void mainGame(){
 
         Scanner playerAnswer = new Scanner(System.in);
