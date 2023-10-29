@@ -22,3 +22,8 @@ Para executar o jogo, dentro da diretoria principal do projecto, abra o terminal
 * Implementar se a verificação das opções digitadas estão correctas
 * Implementar notas (bemol)
 * Implementar o jogo em inglês
+
+
+
+## Screenshots
+<img src="https://github.com/miguelnunorosa/BassNotesGame/blob/main/extra/screenshot01.png" width=250 height=550 alt="Screenshot01"></img>
