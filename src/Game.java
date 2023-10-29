@@ -1,14 +1,15 @@
-import java.util.Random;
 import java.util.Scanner;
 
+/**
+ * This class is responsible for the mechanics of the game itself. It is through this that connections are
+ * made between the remaining classes.
+ */
 public class Game {
 
     private static final Graphics graphics = new Graphics();
-    private static final Note notes = new Note();
     private static final Utils utils = new Utils();
     private static final BassFourString bassFourString = new BassFourString();
-    private static final Random numRandom = new Random();
-    private static int manyStrings, counterCorrect;
+    private static int manyStrings;
 
 
 
@@ -50,6 +51,10 @@ public class Game {
 
 
 
+    /**
+     * This method asks the user how many strings the bass has. A check has been implemented
+     * that does not allow the user to enter an option other than those allowed.
+     */
     private static void askHowManyStrings(){
         Scanner playerAnswer = new Scanner(System.in);
         Utils.clearScreen();
@@ -66,13 +71,20 @@ public class Game {
 
 
 
+    /**
+     * This method receives the answer to the question of how many strings the bass has and,
+     * depending on the option entered, starts the respective game.
+     *
+     * @param manyStrings stores the information about how many strings the bass have
+     */
     private static void gameWithSelectBass(int manyStrings){
         Utils.clearScreen();
         graphics.bass(manyStrings);
 
-        if(manyStrings == 4){ //TODO check workflow
+        if(manyStrings == 4){
             do {
-                bassFourString.main();
+                utils.clearScreen();
+                bassFourString.mainActivity();
                 //System.out.println("Corretas: " + counterCorrect);
             }while(true);
         }else{
@@ -83,14 +95,7 @@ public class Game {
 
 
 
-    private static void guessNoteStringB(String playerAnswer, int pickedBassFret){
-        if( playerAnswer.equals( notes.getStringB(pickedBassFret) ) ) {
-            System.out.println("ACERTOU");
-            counterCorrect++;
-        }else{
-            System.out.println("Nota incorreta! \nA nota correta seria: " + notes.getStringB(pickedBassFret));
-        }
-    }
+
 
 
 
@@ -130,6 +135,19 @@ public class Game {
     private static void selectedFiveStringsBass(){
         //TODO
     }
+
+
+    private static void guessNoteStringB(String playerAnswer, int pickedBassFret){
+        if( playerAnswer.equals( notes.getStringB(pickedBassFret) ) ) {
+            System.out.println("ACERTOU");
+            counterCorrect++;
+        }else{
+            System.out.println("Nota incorreta! \nA nota correta seria: " + notes.getStringB(pickedBassFret));
+        }
+    }
+
+
+
 */
 
 }

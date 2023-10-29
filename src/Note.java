@@ -10,10 +10,10 @@
 
 public class Note {
 
-                                   //  C    D     E      F     G     A     B
+                                         //  C    D     E      F     G     A     B
     private final String[] noteNames    = {"Dó", "Ré", "Mi", "Fá", "Sol", "Lá", "Si"};
 
-                                  //  0    1     2     3      4
+                                       //  0    1     2     3      4
     private final String[] stringNames = {"Si", "Mi", "Lá", "Ré", "Sol"};
 
     private final String[] stringGNotes = {"Sol", "Sol#", "Lá", "Lá#", "Si", "Dó", "Dó#", "Ré", "Ré#", "Mi", "Fá", "Fá#", "Sol"}; //Corda Sol (G)   4
@@ -25,7 +25,9 @@ public class Note {
 
     
 
-
+    /**
+     * Class constructor
+     */
     public Note(){}
 
 
