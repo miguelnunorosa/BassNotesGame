@@ -5,6 +5,7 @@ public class Game {
 
     private static Graphics graphics = new Graphics();
     private static Note notes = new Note();
+    private static Utils utils = new Utils();
     private static Random numRandom = new Random();
     private static int manyStrings, getFretPosition, getStringFromFourBassString, getStringFromFiveBassString, counterCorrect;
 
@@ -18,10 +19,12 @@ public class Game {
         optionFromMenu = playerAnswer.nextInt();
 
 
+
         //TODO refactor game workflow
         askHowManyStrings();
-        gameWithSelectBass(manyStrings);
 
+
+        gameWithSelectBass(manyStrings);
     }
 
 
@@ -29,6 +32,7 @@ public class Game {
 
     private static void askHowManyStrings(){
         Scanner playerAnswer = new Scanner(System.in);
+        utils.clearScreen();
 
         do{
             System.out.println("Quantas cordas tem o baixo (4 ou 5)? ");
@@ -43,6 +47,7 @@ public class Game {
 
 
     private static void gameWithSelectBass(int manyStrings){
+        utils.clearScreen();
         graphics.bass(manyStrings);
 
         if(manyStrings == 4){ //TODO check workflow
