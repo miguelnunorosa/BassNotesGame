@@ -15,7 +15,7 @@ Este espaço contem as seguintes diretorias:
 
 ## Execução do jogo
 Para executar o jogo, dentro da diretoria principal do projecto, abra o terminal e digite
-> cd /out/production && java App
+> cd out/production/BassNotesGame && java App
 
 
 ## TODO list
