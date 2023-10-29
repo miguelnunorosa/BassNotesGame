@@ -31,6 +31,7 @@ public class Graphics {
 
     /**
      * Method to draw graphics to show the selected bass (4 or 5 strings)
+     * @param strings player set how many strings bass have
      */
     public void bass(int strings){
         System.out.println("# =================== #");

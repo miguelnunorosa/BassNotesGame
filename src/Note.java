@@ -89,6 +89,7 @@ public class Note {
 
     /**
      * Method to get the string G notes position and name
+     * @param stringPosition get the string position for note
      * @return note position/name
      */
     public String getStringG(int stringPosition) { return stringGNotes[stringPosition]; }
@@ -96,6 +97,7 @@ public class Note {
 
     /**
      * Method to get the string D notes position and name
+     * @param stringPosition get the string position for note
      * @return note position/name
      */
     public String getStringD(int stringPosition) { return stringDNotes[stringPosition]; }
@@ -103,6 +105,7 @@ public class Note {
 
     /**
      * Method to get the string A notes position and name
+     * @param stringPosition get the string position for note
      * @return note position/name
      */
     public String getStringA(int stringPosition) { return stringANotes[stringPosition]; }
@@ -110,6 +113,7 @@ public class Note {
 
     /**
      * Method to get the string E notes position and name
+     * @param stringPosition get the string position for note
      * @return note position/name
      */
     public String getStringE(int stringPosition) { return stringENotes[stringPosition]; }
@@ -117,6 +121,7 @@ public class Note {
 
     /**
      * Method to get the string B notes position and name
+     * @param stringPosition get the string position for note
      * @return note position/name
      */
     public String getStringB(int stringPosition) { return stringBNotes[stringPosition]; }
