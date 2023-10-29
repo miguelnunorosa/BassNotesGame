@@ -1,16 +1,22 @@
-import java.util.Random;
 import java.util.Scanner;
 
+/**
+ * This class is responsible for the mechanics of the game itself. It is through this that connections are
+ * made between the remaining classes.
+ */
 public class Game {
 
     private static final Graphics graphics = new Graphics();
-    private static final Note notes = new Note();
     private static final Utils utils = new Utils();
-    private static final Random numRandom = new Random();
-    private static int manyStrings, getFretPosition, getStringFromFourBassString, getStringFromFiveBassString, counterCorrect;
+    private static final BassFourString bassFourString = new BassFourString();
+    private static int manyStrings;
 
 
 
+    /**
+     * Main game method. Here the options that make up the game are shown and wait for the user to select an option.
+     * Depending on the option selected, the game indicates the path to follow.
+     * */
     public void mainGame(){
 
         Scanner playerAnswer = new Scanner(System.in);
@@ -45,6 +51,10 @@ public class Game {
 
 
 
+    /**
+     * This method asks the user how many strings the bass has. A check has been implemented
+     * that does not allow the user to enter an option other than those allowed.
+     */
     private static void askHowManyStrings(){
         Scanner playerAnswer = new Scanner(System.in);
         Utils.clearScreen();
@@ -61,90 +71,71 @@ public class Game {
 
 
 
+    /**
+     * This method receives the answer to the question of how many strings the bass has and,
+     * depending on the option entered, starts the respective game.
+     *
+     * @param manyStrings stores the information about how many strings the bass have
+     */
     private static void gameWithSelectBass(int manyStrings){
         Utils.clearScreen();
         graphics.bass(manyStrings);
 
-        if(manyStrings == 4){ //TODO check workflow
+        if(manyStrings == 4){
             do {
-                selectedFourStringsBass();
+                utils.clearScreen();
+                bassFourString.mainActivity();
                 //System.out.println("Corretas: " + counterCorrect);
             }while(true);
         }else{
-            selectedFiveStringsBass();
+            //selectedFiveStringsBass();
         }
 
     }
 
 
 
-    private static void selectedFourStringsBass(){
-        Scanner playerAnswer = new Scanner(System.in);
-
-        int pickedBassString = getStringFromFourStringBass(); //CPU select random string
-        int pickedBassFret   = getFretFromBassFretboard();    //CPU select random fret
-        String insertedAnswer;
 
 
 
-        System.out.println("\nQual a nota: Corda (" + pickedBassString + ") | Traste (" + pickedBassFret + ")");
-        System.out.print("Resposta: ");
-        insertedAnswer = playerAnswer.nextLine();
 
 
-        switch (pickedBassString) {
-            case 1: //corda (E) Mi
-                guessNoteStringE(insertedAnswer, pickedBassFret);
-                break;
-            case 2: //corda (A) La
-                guessNoteStringA(insertedAnswer, pickedBassFret);
-                break;
-            case 3: //corda (D) Re
-                guessNoteStringD(insertedAnswer, pickedBassFret);
-                break;
-            case 4: //corda (G) Sol
-                guessNoteStringG(insertedAnswer, pickedBassFret);
-                break;
-        }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    /*private static int getStringFromFiveStringBass(){
+        int positionString = numRandom.nextInt(4);
+
+        if (positionString == 0) positionString++;
+
+        return getStringFromFiveBassString = positionString;
     }
 
-
-    private static void guessNoteStringG(String playerAnswer, int pickedBassFret){
-        if( playerAnswer.equals( notes.getStringG(pickedBassFret) ) ) {
-            System.out.println("ACERTOU");
-            counterCorrect++;
-        }else{
-            System.out.println("Nota incorreta! \nA nota correta seria: " + notes.getStringG(pickedBassFret));
-        }
+    private static void selectedFiveStringsBass(){
+        //TODO
     }
 
-    private static void guessNoteStringD(String playerAnswer, int pickedBassFret){
-        if( playerAnswer.equals( notes.getStringD(pickedBassFret) ) ) {
-            System.out.println("ACERTOU");
-            counterCorrect++;
-        }else{
-            System.out.println("Nota incorreta! \nA nota correta seria: " + notes.getStringD(pickedBassFret));
-        }
-    }
-
-    private static void guessNoteStringA(String playerAnswer, int pickedBassFret){
-        if( playerAnswer.equals( notes.getStringA(pickedBassFret) ) ) {
-            System.out.println("ACERTOU");
-            counterCorrect++;
-        }else{
-            System.out.println("Nota incorreta! \nA nota correta seria: " + notes.getStringA(pickedBassFret));
-        }
-    }
-
-    private static void guessNoteStringE(String playerAnswer, int pickedBassFret){
-        if( playerAnswer.equals( notes.getStringE(pickedBassFret) ) ) {
-            System.out.println("ACERTOU");
-            counterCorrect++;
-        }else{
-            System.out.println("Nota incorreta! \nA nota correta seria: " + notes.getStringE(pickedBassFret));
-        }
-    }
 
     private static void guessNoteStringB(String playerAnswer, int pickedBassFret){
         if( playerAnswer.equals( notes.getStringB(pickedBassFret) ) ) {
@@ -157,49 +148,6 @@ public class Game {
 
 
 
-
-
-
-
-
-    private static int getFretFromBassFretboard(){
-        return getFretPosition = numRandom.nextInt(11);
-    }
-
-
-    private static int getStringFromFourStringBass(){
-        return getStringFromFourBassString = numRandom.nextInt(1, notes.getStringsLenght());
-    }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    private static int getStringFromFiveStringBass(){
-        int positionString = numRandom.nextInt(4);
-
-        if (positionString == 0) positionString++;
-
-        return getStringFromFiveBassString = positionString;
-    }
-
-    private static void selectedFiveStringsBass(){
-        //TODO
-    }
-
+*/
 
 }

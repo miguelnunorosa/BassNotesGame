@@ -1,11 +1,19 @@
 
 /**
- * Graphics.
+ * Class that deals with the game's graphical interface
  */
 public class Graphics {
 
 
+    /**
+     * Class constructor
+     */
+    public Graphics(){}
 
+
+    /**
+     * Method to draw main menu
+     */
     public void mainMenu(){
         System.out.println("# ============================ #");
         System.out.println("#       Bass Notes Memory      #");
@@ -21,6 +29,9 @@ public class Graphics {
     }
 
 
+    /**
+     * Method to draw graphics to show the selected bass (4 or 5 strings)
+     */
     public void bass(int strings){
         System.out.println("# =================== #");
         System.out.println("#                     #");
@@ -29,20 +40,29 @@ public class Graphics {
     }
 
 
+    /**
+     * Method to draw help menu (explains how to play)
+     */
     public void help(){
-        System.out.println("# ================================= #");
-        System.out.println("#          Bass Notes Memory        #");
-        System.out.println("#                                   #");
-        System.out.println("# Utilizar:                         #");
-        System.out.println("#    # (sustenido)                  #");
-        System.out.println("#    b (bemol)                      #");
-        System.out.println("#                                   #");
-        System.out.println("# | exemplo: Dó sustenido  Dó#  |   #");
-        System.out.println("#                                   #");
-        System.out.println("# ================================= #");
+        System.out.println("# ========================================= #");
+        System.out.println("#             Bass Notes Memory             #");
+        System.out.println("#                                           #");
+        System.out.println("# Utilizar:                                 #");
+        System.out.println("#    # (sustenido)                          #");
+        System.out.println("#    b (bemol)                              #");
+        System.out.println("#                                           #");
+        System.out.println("# | exemplo de resposta (Dó sustenido):  |  #");
+        System.out.println("# |       Dó#                            |  #");
+        System.out.println("# |  para as restantes notas, basta      |  #");
+        System.out.println("# |  digitar o nome (ex: Dó)             |  #");
+        System.out.println("#                                           #");
+        System.out.println("# ========================================= #");
     }
 
 
+    /**
+     * Method to draw musical notes menu
+     */
     public void notes(){
         System.out.println("# ================================= #");
         System.out.println("#           Bass Notes              #");
@@ -60,7 +80,9 @@ public class Graphics {
     }
 
 
-
+    /**
+     * Method to draw about menu
+     */
     public void about(){
         System.out.println("# ========================================= #");
         System.out.println("#              Bass Notes Memory            #");
