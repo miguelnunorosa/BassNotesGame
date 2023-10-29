@@ -9,6 +9,7 @@ public class Game {
     private static final Graphics graphics = new Graphics();
     private static final Utils utils = new Utils();
     private static final BassFourString bassFourString = new BassFourString();
+    private static final BassFiveString bassFiveString = new BassFiveString();
     private static int manyStrings;
 
 
@@ -81,73 +82,17 @@ public class Game {
         Utils.clearScreen();
         graphics.bass(manyStrings);
 
-        if(manyStrings == 4){
-            do {
-                utils.clearScreen();
+        do{
+            utils.clearScreen();
+            if(manyStrings == 4){
                 bassFourString.mainActivity();
-                //System.out.println("Corretas: " + counterCorrect);
-            }while(true);
-        }else{
-            //selectedFiveStringsBass();
-        }
+            }else{
+                bassFiveString.mainActivity();
+            }
+        }while(true);
 
     }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    /*private static int getStringFromFiveStringBass(){
-        int positionString = numRandom.nextInt(4);
-
-        if (positionString == 0) positionString++;
-
-        return getStringFromFiveBassString = positionString;
-    }
-
-    private static void selectedFiveStringsBass(){
-        //TODO
-    }
-
-
-    private static void guessNoteStringB(String playerAnswer, int pickedBassFret){
-        if( playerAnswer.equals( notes.getStringB(pickedBassFret) ) ) {
-            System.out.println("ACERTOU");
-            counterCorrect++;
-        }else{
-            System.out.println("Nota incorreta! \nA nota correta seria: " + notes.getStringB(pickedBassFret));
-        }
-    }
-
-
-
-*/
 
 }
