@@ -4,7 +4,7 @@ import java.util.Scanner;
 public class Game {
 
     private static Graphics graphics = new Graphics();
-    private static Notes notes = new Notes();
+    private static Note notes = new Note();
     private static Random numRandom = new Random();
     private static int manyStrings, getFretPosition, getStringFromFourBassString, getStringFromFiveBassString, counterCorrect;
 
@@ -48,7 +48,7 @@ public class Game {
         if(manyStrings == 4){ //TODO check workflow
             do {
                 selectedFourStringsBass();
-                System.out.println("Corretas: " + counterCorrect);
+                //System.out.println("Corretas: " + counterCorrect);
             }while(true);
         }else{
             selectedFiveStringsBass();
@@ -60,96 +60,88 @@ public class Game {
 
     private static void selectedFourStringsBass(){
         Scanner playerAnswer = new Scanner(System.in);
-        int pickedBassString, pickedBassFret;
+
+        int pickedBassString = getStringFromFourStringBass(); //CPU select random string
+        int pickedBassFret   = getFretFromBassFretboard();    //CPU select random fret
         String guessAnswer;
 
 
 
-        pickedBassString = getStringFromFourStringBass(); //CPU select random string
-        pickedBassFret   = getFretFromBassFretboard();    //CPU select random fret
-        int parada = 0;
-
-
-        System.out.println("\nQual a nota: Traste (" + pickedBassFret + ") | Corda (" + pickedBassString + ")");
+        System.out.println("\nQual a nota: Corda (" + pickedBassString + ") | Traste (" + pickedBassFret + ")");
         System.out.print("Resposta: ");
         guessAnswer = playerAnswer.nextLine();
 
 
-        //TODO algoritmo
-        //ler/guardar qual o nº da corda seleccionada no metodo getStringFromFourStringBass()
-        //ler/guardar qual o nº do fret seleccionado no metodo getFretFromFourStringsBass()
-        //comparar a nota que o utilizador digitou com a nota da posição do frete
-             //se for igual, informa que acertou. Caso contrario, gera nova nota para adivinhar
-
-
-
-        /*if( pickedBassString == 1 ){
-            if( guessAnswer.equals( notes.getStringE(pickedBassFret) ) ) {
-                System.out.println("ACERTOU");
-                counterCorrect++;
-            }else{
-                System.out.println("ERROU!!");
-            }
-        }*/
-
-
-
         switch(pickedBassString){
-            case 1: //corda E Mi
-                //System.out.println("demo selected string (1) 1 - A Lá");
-                if( guessAnswer.equals( notes.getStringE(pickedBassFret) ) ) {
-                    System.out.println("ACERTOU");
-                    counterCorrect++;
-                }else{
-                    System.out.println("Nota incorreta! \nA nota correta seria: " + notes.getStringE(pickedBassFret));
-                }
+            case 1: //corda (E) Mi
+                guessNoteStringE(guessAnswer, pickedBassFret);
                 break;
-            case 2: //corda A La
-                //System.out.println("demo selected string (2) 2 - A Lá");
-                if( guessAnswer.equals( notes.getStringA(pickedBassFret) ) ) {
-                    System.out.println("ACERTOU");
-                    counterCorrect++;
-                }else{
-                    System.out.println("Nota incorreta! \nA nota correta seria: " + notes.getStringA(pickedBassFret));
-                }
+            case 2: //corda (A) La
+                guessNoteStringA(guessAnswer, pickedBassFret);
                 break;
-            case 3: //corda D Re
-                //System.out.println("demo selected string (3) 3 - A Ré");
-                if( guessAnswer.equals( notes.getStringD(pickedBassFret) ) ) {
-                    System.out.println("ACERTOU");
-                    counterCorrect++;
-                }else{
-                    System.out.println("Nota incorreta! \nA nota correta seria: " + notes.getStringD(pickedBassFret));
-                }
+            case 3: //corda (D) Re
+                guessNoteStringD(guessAnswer, pickedBassFret);
                 break;
-            case 4: //corda G Sol
-                //System.out.println("demo selected string (4) 4 - A Sol");
-                if( guessAnswer.equals( notes.getStringG(pickedBassFret) ) ) {
-                    System.out.println("ACERTOU");
-                    counterCorrect++;
-                }else{
-                    System.out.println("Nota incorreta! \nA nota correta seria: " + notes.getStringG(pickedBassFret));
-                }
+            case 4: //corda (G) Sol
+                guessNoteStringG(guessAnswer, pickedBassFret);
                 break;
         }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        //System.out.println("string " + positionString + "STRING: " + notes.pickStringName(positionString));  //TODO remove this line after finish project
     }
+
+
+
+    private static void guessNoteStringG(String playerAnswer, int pickedBassFret){
+        if( playerAnswer.equals( notes.getStringG(pickedBassFret) ) ) {
+            System.out.println("ACERTOU");
+            counterCorrect++;
+        }else{
+            System.out.println("Nota incorreta! \nA nota correta seria: " + notes.getStringG(pickedBassFret));
+        }
+    }
+
+    private static void guessNoteStringD(String playerAnswer, int pickedBassFret){
+        if( playerAnswer.equals( notes.getStringD(pickedBassFret) ) ) {
+            System.out.println("ACERTOU");
+            counterCorrect++;
+        }else{
+            System.out.println("Nota incorreta! \nA nota correta seria: " + notes.getStringD(pickedBassFret));
+        }
+    }
+
+    private static void guessNoteStringA(String playerAnswer, int pickedBassFret){
+        if( playerAnswer.equals( notes.getStringA(pickedBassFret) ) ) {
+            System.out.println("ACERTOU");
+            counterCorrect++;
+        }else{
+            System.out.println("Nota incorreta! \nA nota correta seria: " + notes.getStringA(pickedBassFret));
+        }
+    }
+
+    private static void guessNoteStringE(String playerAnswer, int pickedBassFret){
+        if( playerAnswer.equals( notes.getStringE(pickedBassFret) ) ) {
+            System.out.println("ACERTOU");
+            counterCorrect++;
+        }else{
+            System.out.println("Nota incorreta! \nA nota correta seria: " + notes.getStringE(pickedBassFret));
+        }
+    }
+
+    private static void guessNoteStringB(String playerAnswer, int pickedBassFret){
+        if( playerAnswer.equals( notes.getStringB(pickedBassFret) ) ) {
+            System.out.println("ACERTOU");
+            counterCorrect++;
+        }else{
+            System.out.println("Nota incorreta! \nA nota correta seria: " + notes.getStringB(pickedBassFret));
+        }
+    }
+
+
+
+
+
+
+
 
     private static int getFretFromBassFretboard(){
         return getFretPosition = numRandom.nextInt(11);
@@ -161,6 +153,23 @@ public class Game {
     }
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     private static int getStringFromFiveStringBass(){
         int positionString = numRandom.nextInt(4);
 
@@ -168,23 +177,6 @@ public class Game {
 
         return getStringFromFiveBassString = positionString;
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     private static void selectedFiveStringsBass(){
         //TODO
