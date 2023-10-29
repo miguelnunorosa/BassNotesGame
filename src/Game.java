@@ -3,24 +3,42 @@ import java.util.Scanner;
 
 public class Game {
 
-    private static Graphics graphics = new Graphics();
-    private static Note notes = new Note();
-    private static Random numRandom = new Random();
+    private static final Graphics graphics = new Graphics();
+    private static final Note notes = new Note();
+    private static final Utils utils = new Utils();
+    private static final Random numRandom = new Random();
     private static int manyStrings, getFretPosition, getStringFromFourBassString, getStringFromFiveBassString, counterCorrect;
 
 
 
     public void mainGame(){
+
         Scanner playerAnswer = new Scanner(System.in);
         int optionFromMenu;
 
+
+        utils.clearScreen();
         graphics.mainMenu();
         optionFromMenu = playerAnswer.nextInt();
 
 
-        //TODO refactor game workflow
-        askHowManyStrings();
-        gameWithSelectBass(manyStrings);
+        switch(optionFromMenu){
+            case 1:
+                askHowManyStrings();
+                gameWithSelectBass(manyStrings);
+                break;
+            case 2:
+                graphics.notes();
+                break;
+            case 3:
+                graphics.help();
+                break;
+            case 9:
+                graphics.about();
+                break;
+            case 0:
+                System.exit(0);
+        }
 
     }
 
@@ -29,6 +47,7 @@ public class Game {
 
     private static void askHowManyStrings(){
         Scanner playerAnswer = new Scanner(System.in);
+        Utils.clearScreen();
 
         do{
             System.out.println("Quantas cordas tem o baixo (4 ou 5)? ");
@@ -43,6 +62,7 @@ public class Game {
 
 
     private static void gameWithSelectBass(int manyStrings){
+        Utils.clearScreen();
         graphics.bass(manyStrings);
 
         if(manyStrings == 4){ //TODO check workflow
@@ -63,32 +83,31 @@ public class Game {
 
         int pickedBassString = getStringFromFourStringBass(); //CPU select random string
         int pickedBassFret   = getFretFromBassFretboard();    //CPU select random fret
-        String guessAnswer;
+        String insertedAnswer;
 
 
 
         System.out.println("\nQual a nota: Corda (" + pickedBassString + ") | Traste (" + pickedBassFret + ")");
         System.out.print("Resposta: ");
-        guessAnswer = playerAnswer.nextLine();
+        insertedAnswer = playerAnswer.nextLine();
 
 
-        switch(pickedBassString){
+        switch (pickedBassString) {
             case 1: //corda (E) Mi
-                guessNoteStringE(guessAnswer, pickedBassFret);
+                guessNoteStringE(insertedAnswer, pickedBassFret);
                 break;
             case 2: //corda (A) La
-                guessNoteStringA(guessAnswer, pickedBassFret);
+                guessNoteStringA(insertedAnswer, pickedBassFret);
                 break;
             case 3: //corda (D) Re
-                guessNoteStringD(guessAnswer, pickedBassFret);
+                guessNoteStringD(insertedAnswer, pickedBassFret);
                 break;
             case 4: //corda (G) Sol
-                guessNoteStringG(guessAnswer, pickedBassFret);
+                guessNoteStringG(insertedAnswer, pickedBassFret);
                 break;
         }
 
     }
-
 
 
     private static void guessNoteStringG(String playerAnswer, int pickedBassFret){

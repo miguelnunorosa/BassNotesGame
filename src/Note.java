@@ -11,16 +11,16 @@
 public class Note {
 
                                    //  C    D     E      F     G     A     B
-    private String[] noteNames    = {"Dó", "Ré", "Mi", "Fá", "Sol", "Lá", "Si"};
+    private final String[] noteNames    = {"Dó", "Ré", "Mi", "Fá", "Sol", "Lá", "Si"};
 
                                   //  0    1     2     3      4
-    private String[] stringNames = {"Si", "Mi", "Lá", "Ré", "Sol"};
+    private final String[] stringNames = {"Si", "Mi", "Lá", "Ré", "Sol"};
 
-    private String[] stringGNotes = {"Sol", "Sol#", "Lá", "Lá#", "Si", "Dó", "Dó#", "Ré", "Ré#", "Mi", "Fá", "Fá#", "Sol"}; //Corda Sol (G)   4
-    private String[] stringDNotes = {"Ré", "Ré#", "Mi", "Fá", "Fá#", "Sol", "Sol#", "Lá", "Lá#", "Si", "Dó", "Dó#", "Ré"}; //Corda Ré (D)     3
-    private String[] stringANotes = {"Lá", "Lá#", "Si", "Dó", "Dó#", "Ré", "Ré#", "Mi", "Fá", "Fá#", "Sol", "Sol#", "Lá"}; //Corda Lá (A)     2
-    private String[] stringENotes = {"Mi", "Fá", "Fá#", "Sol", "Sol#", "Lá", "Lá#", "Si", "Dó", "Dó#", "Ré", "Ré#", "Mi"}; //Corda Mi (E)     1
-    private String[] stringBNotes = {"si", "Dó", "Dó#", "Ré", "Ré#", "Mi", "Fá", "Fá#", "Sol", "Sol#", "Lá", "Lá#", "Si"}; //Corda Si (B)     0
+    private final String[] stringGNotes = {"Sol", "Sol#", "Lá", "Lá#", "Si", "Dó", "Dó#", "Ré", "Ré#", "Mi", "Fá", "Fá#", "Sol"}; //Corda Sol (G)   4
+    private final String[] stringDNotes = {"Ré", "Ré#", "Mi", "Fá", "Fá#", "Sol", "Sol#", "Lá", "Lá#", "Si", "Dó", "Dó#", "Ré"}; //Corda Ré (D)     3
+    private final String[] stringANotes = {"Lá", "Lá#", "Si", "Dó", "Dó#", "Ré", "Ré#", "Mi", "Fá", "Fá#", "Sol", "Sol#", "Lá"}; //Corda Lá (A)     2
+    private final String[] stringENotes = {"Mi", "Fá", "Fá#", "Sol", "Sol#", "Lá", "Lá#", "Si", "Dó", "Dó#", "Ré", "Ré#", "Mi"}; //Corda Mi (E)     1
+    private final String[] stringBNotes = {"si", "Dó", "Dó#", "Ré", "Ré#", "Mi", "Fá", "Fá#", "Sol", "Sol#", "Lá", "Lá#", "Si"}; //Corda Si (B)     0
 
 
     

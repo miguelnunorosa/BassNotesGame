@@ -1,19 +1,9 @@
 
-
-
 /**
- * Graphics
+ * Graphics.
  */
 public class Graphics {
 
-
-    public void header(){
-        System.out.println("# ============================ #");
-        System.out.println("#                              #");
-        System.out.println("#          BASS NOTES          #");
-        System.out.println("#                              #");
-        System.out.println("# ============================ #\n\n");
-    }
 
 
     public void mainMenu(){
@@ -47,7 +37,7 @@ public class Graphics {
         System.out.println("#    # (sustenido)                  #");
         System.out.println("#    b (bemol)                      #");
         System.out.println("#                                   #");
-        System.out.println("# [ exemplo: Dó sustenido =>  C# ]  #");
+        System.out.println("# | exemplo: Dó sustenido  Dó#  |   #");
         System.out.println("#                                   #");
         System.out.println("# ================================= #");
     }
@@ -67,6 +57,25 @@ public class Graphics {
         System.out.println("#  G => Sol         Sol#  /  Solb   #");
         System.out.println("#                                   #");
         System.out.println("# ================================= #");
+    }
+
+
+
+    public void about(){
+        System.out.println("# ========================================= #");
+        System.out.println("#              Bass Notes Memory            #");
+        System.out.println("#                                           #");
+        System.out.println("# Projeto Desenvolvido por:                 #");
+        System.out.println("#   Miguel Rosa                             #");
+        System.out.println("#   Outubro 29, 2023                        #");
+        System.out.println("#                                           #");
+        System.out.println("# github.com/miguelnunorosa/BassNotesGame   #");
+        System.out.println("#                                           #");
+        System.out.println("# 'Projeto realizado para consolidar        #");
+        System.out.println("#  conhecimentos. Qualquer feedback é       #");
+        System.out.println("#  bem vindo afim de melhorar. Obrigado.'   #");
+        System.out.println("#                                           #");
+        System.out.println("# ========================================= #");
     }
 
     
