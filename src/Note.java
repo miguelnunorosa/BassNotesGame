@@ -8,7 +8,7 @@
  * and allowing you to obtain the name of the notes in a specific position.
  */
 
-public class Notes {
+public class Note {
 
                                    //  C    D     E      F     G     A     B
     private String[] noteNames    = {"Dó", "Ré", "Mi", "Fá", "Sol", "Lá", "Si"};
@@ -26,7 +26,7 @@ public class Notes {
     
 
 
-    public Notes(){}
+    public Note(){}
 
 
     /**

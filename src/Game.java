@@ -4,7 +4,7 @@ import java.util.Scanner;
 public class Game {
 
     private static Graphics graphics = new Graphics();
-    private static Notes notes = new Notes();
+    private static Note notes = new Note();
     private static Random numRandom = new Random();
     private static int manyStrings, getFretPosition, getStringFromFourBassString, getStringFromFiveBassString, counterCorrect;
 
@@ -124,6 +124,15 @@ public class Game {
             counterCorrect++;
         }else{
             System.out.println("Nota incorreta! \nA nota correta seria: " + notes.getStringE(pickedBassFret));
+        }
+    }
+
+    private static void guessNoteStringB(String playerAnswer, int pickedBassFret){
+        if( playerAnswer.equals( notes.getStringB(pickedBassFret) ) ) {
+            System.out.println("ACERTOU");
+            counterCorrect++;
+        }else{
+            System.out.println("Nota incorreta! \nA nota correta seria: " + notes.getStringB(pickedBassFret));
         }
     }
 
